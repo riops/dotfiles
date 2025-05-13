@@ -35,12 +35,12 @@ w | --window)
     r_mode="window"
     rofi_config="${ROFI_LAUNCH_WINDOW_STYLE:-$rofi_config}"
     ;;
-f | --filebrowser)
-    r_mode="filebrowser"
+f | --finder)
+    r_mode="finder"
     rofi_config="${ROFI_LAUNCH_FILEBROWSER_STYLE:-$rofi_config}"
     ;;
-r | --run)
-    r_mode="run"
+r | --projects)
+    r_mode="projects"
     rofi_config="${ROFI_LAUNCH_RUN_STYLE:-$rofi_config}"
     rofi_args+=("--run-command" "sh -c 'uwsm app -- {cmd} || {cmd}'")
     ;;
@@ -48,8 +48,8 @@ h | --help)
     echo -e "$(basename "${0}") [action]"
     echo "d :  drun mode"
     echo "w :  window mode"
-    echo "f :  filebrowser mode,"
-    echo "r :  run mode"
+    echo "f :  finder mode,"
+    echo "r :  projects mode"
     exit 0
     ;;
 *)
