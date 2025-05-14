@@ -22,16 +22,14 @@ bind p fish_clipboard_paste
 # List Directory
 # Navigation
 alias aliases='nvim ~/.config/aliases.sh'
-alias home='cd ~'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias ls='eza --icons'
-alias ll='eza -l --icons'
-alias la='eza -a --icons'
-alias ld='eza -D --icons'
-alias lla='eza -la --icons'
-alias l='eza -l1 --icons '
+alias home='z'
+alias ..='z ..'
+alias ...='z ../..'
+alias ....='z ../../..'
+alias ls='lsd'
+alias ll='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
 alias c='clear'
 alias flatten='python3 ~/.scripts/flatten-directories.py'
 alias ff='fastfetch'
@@ -44,13 +42,6 @@ alias vi='nvim'
 if test -f ~/.scripts/projects.fish
     source ~/.scripts/projects.fish
 end
-
-#
-# if [ -f "$HOME/.scripts/dropbox_projects.sh" ]; then
-#   . "$HOME/.scripts/dropbox_projects.sh" 
-# fi
-# alias projects='project -l'
-
 
 # Handy change dir shortcuts
 abbr .. 'cd ..'
