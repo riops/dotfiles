@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# This is the location of the actual via-cli
+VIA_CLI_PATH="/usr/bin/via-cli"
+
+# Hardcoded credentials (replace with actual values)
+PASSWORD="$(pass via_password)"
+
+"$VIA_CLI_PATH" vpn connect -u berk -p "$PASSWORD"

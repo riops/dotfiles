@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+VIA_VPN_SRV_PATH="/usr/bin/via-vpn-srv"
+
+PASSWORD="$(pass ssh_password)"
+
+# Use expect to automate the sudo password input
+expect << EOF
+spawn sudo $VIA_VPN_SRV_PATH
+expect {
+    -exact "\[sudo\] password for $(whoami): " { send "$PASSWORD\r"; exp_continue }
+    eof
+}
+EOF

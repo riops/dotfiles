@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+if [ "$#" -ne 1 ] || ! expr "$1" : '^[0-9]\+$' >/dev/null; then
+    echo "Usage: $0 N  # N must be a positive integer" >&2
+    exit 1
+fi
+
+N=$1
+currentWorkspace=$( hyprctl activeworkspace | grep -oP '(?<=workspace ID )\d+' )
+currentMonitor=$( hyprctl activeworkspace | grep -oP '(?<=monitorID: )\d+' )
+
+currentRelativeMonitor=$(( (currentWorkspace - 1) % 3 + 1 ))
+# echo "$currentWorkspace"
+# echo "$currentRelativeMonitor"
+
+base=$(( (N - 1) * 3 ))
+newWorkspace=$(( base + currentRelativeMonitor ))
+hyprctl dispatch movetoworkspace "$newWorkspace"
+
+ws1=$(( base + 1 ))
+ws3=$(( base + 3 ))
+ws2=$(( base + 2 ))
+
+hyprctl --batch "dispatch workspace $ws1; dispatch workspace $ws2; dispatch workspace $ws3; dispatch focusmonitor $currentMonitor"
+# hyprctl --batch "dispatch workspace $ws1; dispatch workspace $ws2; dispatch workspace $ws3"
+
