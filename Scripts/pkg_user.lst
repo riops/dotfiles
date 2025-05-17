@@ -1,0 +1,42 @@
+# --------------------------------------------------- // System
+wttrbar                                                # for weather
+python-requests|wttrbar                                # script dependency
+ddcui                                                  # GUI to control brightness for external monitors
+
+# --------------------------------------------------- // Shell
+
+
+# --------------------------------------------------- // Misc
+xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
+
+# --------------------------------------------------- // Gaming
+steam                                                  # gaming platform
+gamemode                                               # daemon and library for game optimizations
+mangohud                                               # system performance overlay
+lutris                                                 # Lutris is an open source gaming platform for Linux
+
+# --------------------------------------------------- // Music
+cava                                                   # audio visualizer
+spotify                                                # proprietary music streaming service
+spicetify-cli                                          # cli to customize spotify client
+
+# --------------------------------------------------- // Apps
+dropbox
+eog
+zathura
+fzf
+openmpi
+openvpn
+tk
+wine-staging
+winetricks
+wl-clipboard
+clipse
+clipse-gui
+yazi
+mullvad-vpn
+networkmanager-openvpn
+zathura-git
+zathura-pdf-mupdf-git
+eza
+protonup-qt
